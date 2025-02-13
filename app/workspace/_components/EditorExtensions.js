@@ -31,8 +31,8 @@ function EditorExtensions({editor}){
         UnformattedAns&&UnformattedAns.forEach(item=>{
           AllUnformattedAns =AllUnformattedAns +item.pageContent
         });
-        const PROMPT="For question :"+selectedText+" and with the given content as asnwer, "+
-        "please give appropriate asnwer in HTML format. The answer content is:"+AllUnformattedAns ;
+        const PROMPT="For question :"+selectedText+" and with the given content, "+
+        "please elaborate more and answer in HTML format. Give only the answer and no other text. If the content is empty then only answer on your own. The content is:"+AllUnformattedAns ;
 
         const AiModelResult=await chatSession.sendMessage(PROMPT);
         console.log(AiModelResult.response.text());
